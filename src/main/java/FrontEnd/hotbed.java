@@ -6,6 +6,7 @@
 package FrontEnd;
 
 import BackEnd.Oda;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -188,7 +189,8 @@ public class hotbed extends javax.swing.JFrame {
         this.jPanel2.repaint();
         this.jPanel2.revalidate();
         this.jPanel2.add(o);
-        this.jPanel2.repaint(); 
+        this.jPanel2.repaint();
+        //o.actionPerformed((ActionEvent) o.getAction());
     }
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
