@@ -6,18 +6,21 @@
 package FrontEnd;
 
 import BackEnd.Oda;
+import BackEnd.TarixVaxt;
 
 /**
  *
  * @author Acer8
  */
 public class hotbed extends javax.swing.JFrame {
-
+    TarixVaxt vaxt = new TarixVaxt();
+    
     /**
-     * Creates new form hotbed
+        * Creates new form hotbed
      */
     public hotbed() {
         initComponents();
+        this.VaxtGosderge.setText("Vaxt : "+vaxt.getTarix());
     }
 
     /**
@@ -38,6 +41,7 @@ public class hotbed extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         Mesaj = new javax.swing.JLabel();
+        VaxtGosderge = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -87,6 +91,9 @@ public class hotbed extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
+        VaxtGosderge.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        VaxtGosderge.setText("Vaxt :");
+
         jMenu2.setText("Aayarlar");
         jMenuBar1.add(jMenu2);
 
@@ -103,16 +110,20 @@ public class hotbed extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(629, Short.MAX_VALUE)
                 .addComponent(Version_txt))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(154, 154, 154)
-                .addComponent(jScrollPane1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(VaxtGosderge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(VaxtGosderge)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Version_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -171,6 +182,7 @@ public class hotbed extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ElaveEt;
     private javax.swing.JLabel Mesaj;
+    private javax.swing.JLabel VaxtGosderge;
     private javax.swing.JLabel Version_txt;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
