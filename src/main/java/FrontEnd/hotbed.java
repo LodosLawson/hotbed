@@ -6,7 +6,6 @@
 package FrontEnd;
 
 import BackEnd.Oda;
-import java.awt.event.ActionEvent;
 
 /**
  *
@@ -38,19 +37,7 @@ public class hotbed extends javax.swing.JFrame {
         ElaveEt = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        Mesaj = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -63,10 +50,10 @@ public class hotbed extends javax.swing.JFrame {
 
         Version_txt.setText("V 0.1");
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
-        ElaveEt.setBackground(new java.awt.Color(102, 255, 102));
-        ElaveEt.setText("+");
+        ElaveEt.setBackground(new java.awt.Color(153, 153, 153));
+        ElaveEt.setText("Oda +");
         ElaveEt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ElaveEtActionPerformed(evt);
@@ -90,65 +77,13 @@ public class hotbed extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new java.awt.GridLayout(5, 5));
 
-        jButton6.setBackground(new java.awt.Color(0, 204, 0));
-        jButton6.setText("Oda-1");
-        jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jButton6);
-
-        jButton7.setBackground(new java.awt.Color(0, 204, 0));
-        jButton7.setText("Oda-2");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton7);
-
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setText("Oda-3");
-        jPanel2.add(jButton1);
-
-        jButton9.setBackground(new java.awt.Color(255, 0, 0));
-        jButton9.setText("Oda-4");
-        jPanel2.add(jButton9);
-
-        jButton8.setBackground(new java.awt.Color(0, 204, 0));
-        jButton8.setText("Oda-5");
-        jPanel2.add(jButton8);
-
-        jButton11.setBackground(new java.awt.Color(255, 0, 0));
-        jButton11.setText("Oda-6");
-        jPanel2.add(jButton11);
-
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Oda-7");
-        jPanel2.add(jButton2);
-
-        jButton3.setText("Oda-8");
-        jPanel2.add(jButton3);
-
-        jButton12.setBackground(new java.awt.Color(0, 204, 0));
-        jButton12.setText("Oda-9");
-        jPanel2.add(jButton12);
-
-        jButton4.setBackground(new java.awt.Color(255, 255, 0));
-        jButton4.setText("Oda-10");
-        jPanel2.add(jButton4);
-
-        jButton5.setBackground(new java.awt.Color(0, 204, 0));
-        jButton5.setText("Oda-11");
-        jPanel2.add(jButton5);
-
-        jButton13.setBackground(new java.awt.Color(255, 255, 0));
-        jButton13.setText("Oda-12");
-        jPanel2.add(jButton13);
-
-        jButton10.setBackground(new java.awt.Color(255, 255, 0));
-        jButton10.setText("Oda-13");
-        jPanel2.add(jButton10);
+        Mesaj.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
+        Mesaj.setForeground(new java.awt.Color(204, 204, 204));
+        Mesaj.setText("Oda Yoxdur");
+        jPanel2.add(Mesaj);
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -185,17 +120,14 @@ public class hotbed extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void Odalar(){
-        Oda o = new Oda("VarOlan");
-        this.jPanel2.repaint();
-        this.jPanel2.revalidate();
-        this.jPanel2.add(o);
-        this.jPanel2.repaint();
+        OdaElaveEt ODA = new OdaElaveEt();
+        ODA.Panel = this.jPanel2;
+        ODA.setVisible(true);
+      
+        
         //o.actionPerformed((ActionEvent) o.getAction());
     }
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
+    
     private void ElaveEtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElaveEtActionPerformed
         // TODO add your handling code here:
         this.Odalar();
@@ -238,20 +170,8 @@ public class hotbed extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ElaveEt;
+    private javax.swing.JLabel Mesaj;
     private javax.swing.JLabel Version_txt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

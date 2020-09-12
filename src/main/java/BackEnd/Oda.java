@@ -6,6 +6,7 @@
 package BackEnd;
 
 import FrontEnd.OdaMelumati;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
@@ -15,24 +16,27 @@ import java.awt.event.ActionListener;
 public class Oda extends javax.swing.JButton {
     static int sayi = 0;
     private int id;
-    public Oda(String Melumat){
+    
+    private static OdaDaxiliMelumat oda;
+    
+    public void setOdaObject(OdaDaxiliMelumat AS){ this.oda = AS; }
+    
+    public Oda(OdaDaxiliMelumat oda){
+        
         this.sayi++;
         this.id = this.sayi;
-        OdaDaxiliMelumat oda = new OdaDaxiliMelumat(this.sayi);
-        oda.setDurumu("Bos");
-        oda.setOdaIcersindekiOdaSayi(3);
-        oda.setNomresi(this.sayi);
-        oda.setReng(new java.awt.Color(0, 204, 0));
-        this.setText("Oda-"+Oda.sayi);
-        this.setBackground(new java.awt.Color(0, 204, 0));
+     
+        this.setText("Oda-"+this.sayi);
+        this.setBackground(oda.getReng());
+
         this.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-                    System.out.println("salam"+oda.getNomresi());
-                    System.out.println("salam"+id);
-                    OdaMelumati Od = new OdaMelumati();
-                    Od.MelumatDaxili(oda.getNomresi(), oda.getOdaIcersindekiOdaSayi(), oda.getDurumu(), oda.getReng());
-                    Od.setVisible(true);
-         }
-      });
+            public void actionPerformed(ActionEvent e) {            
+                OdaMelumati Od = new OdaMelumati();
+                Od.MelumatDaxili(oda.getNomresi(), oda.getOdaIcersindekiOdaSayi(), oda.getDurumu(), oda.getReng(), oda.getIsim(),
+                    oda.getSoyIsim(), oda.getSVBNumarasi());
+                Od.setVisible(true);
+            }
+        });
+       // System.out.println(oda.getReng());
     }         
 }
