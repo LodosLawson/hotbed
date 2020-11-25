@@ -33,7 +33,7 @@ public class Oda extends javax.swing.JButton {
             public void actionPerformed(ActionEvent e) {            
                 OdaMelumati Od = new OdaMelumati();
                 Od.MelumatDaxili(oda.getNomresi(), oda.getOdaIcersindekiOdaSayi(), oda.getDurumu(), oda.getReng(), oda.getIsim(),
-                    oda.getSoyIsim(), oda.getSVBNumarasi());
+                    oda.getSoyIsim(), oda.getSVBNumarasi(), oda.getVaxt());
                 Od.setVisible(true);
             }
         });

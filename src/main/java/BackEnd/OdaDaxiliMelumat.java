@@ -20,6 +20,7 @@ public class OdaDaxiliMelumat {
     private String Isim;
     private String SoyIsim;
     private int SVBNumarasi;
+    private String Vaxt;
     
     public OdaDaxiliMelumat(){
       
@@ -41,7 +42,9 @@ public class OdaDaxiliMelumat {
     public void setIsim(String Isim) { this.Isim = Isim; }
     public void setSoyIsim(String SoyIsim) { this.SoyIsim = SoyIsim; }
     public void setSVBNumarasi(int SVBNumarasi) { this.SVBNumarasi = SVBNumarasi; }
-    
+    public String getVaxt() { return Vaxt; }
+    public void setVaxt(String Vaxt) { this.Vaxt = Vaxt; }
+ 
     public Color DurumRengi(String Durum){
         if(Durum.equals("Bos")){
             return Color.GREEN;
@@ -49,7 +52,8 @@ public class OdaDaxiliMelumat {
             return Color.RED;
         } else if(Durum.equals("Xarab")){
             return Color.YELLOW;
+        }else{
+            return new java.awt.Color(0,0,0);
         }
-        return new java.awt.Color(0,0,0);
     }
 }

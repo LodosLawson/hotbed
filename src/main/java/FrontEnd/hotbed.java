@@ -1,26 +1,35 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Version 0.1
  */
 package FrontEnd;
 
-import BackEnd.Oda;
+import BackEnd.OdaDaxiliMelumat;
+import BackEnd.Saxla;
 import BackEnd.TarixVaxt;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
 
 /**
  *
  * @author Acer8
  */
 public class hotbed extends javax.swing.JFrame {
-    TarixVaxt vaxt = new TarixVaxt();
-    
+    public static TarixVaxt vaxt = new TarixVaxt();
+    public static OdaDaxiliMelumat[] Odalar = new OdaDaxiliMelumat[200]; 
+    public Saxla Fayil = new Saxla();
+
     /**
         * Creates new form hotbed
      */
     public hotbed() {
         initComponents();
         this.VaxtGosderge.setText("Vaxt : "+vaxt.getTarix());
+        
+        Fayil.Panel = this.jPanel2;
+        Fayil.Yukleyici();
     }
 
     /**
@@ -51,6 +60,14 @@ public class hotbed extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         Version_txt.setText("V 0.1");
 
@@ -108,13 +125,10 @@ public class hotbed extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(629, Short.MAX_VALUE)
+                .addContainerGap(975, Short.MAX_VALUE)
                 .addComponent(Version_txt))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(VaxtGosderge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jScrollPane1)
+            .addComponent(VaxtGosderge, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +137,7 @@ public class hotbed extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(VaxtGosderge)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Version_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -134,15 +148,30 @@ public class hotbed extends javax.swing.JFrame {
         OdaElaveEt ODA = new OdaElaveEt();
         ODA.Panel = this.jPanel2;
         ODA.setVisible(true);
-      
         
         //o.actionPerformed((ActionEvent) o.getAction());
     }
-    
+  
     private void ElaveEtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElaveEtActionPerformed
         // TODO add your handling code here:
         this.Odalar();
     }//GEN-LAST:event_ElaveEtActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        //System.out.println("salama dunyalar");
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        System.out.println("salama dunyalar");
+        //Buradan save dosyasini cagiracayiq      
+        try {
+            if(OdaElaveEt.sayac != Fayil.Saxlayici){
+                Fayil.Saxlayici();
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(hotbed.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

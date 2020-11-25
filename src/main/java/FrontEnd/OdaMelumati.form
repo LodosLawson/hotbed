@@ -24,9 +24,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="Oda_Vaxti" min="-2" pref="65" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -43,19 +47,20 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="SVBNumarasi" alignment="1" pref="99" max="32767" attributes="0"/>
-                                  <Component id="SoyIsim" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="OdaSayi" alignment="1" max="32767" attributes="0"/>
                                   <Component id="OdaDurumu" alignment="1" pref="99" max="32767" attributes="0"/>
                                   <Component id="OdaIcersindekiOdaSayi" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="SVBNumarasi" alignment="1" pref="99" max="32767" attributes="0"/>
+                                  <Component id="SoyIsim" max="32767" attributes="0"/>
+                                  <Component id="VaxtiGorseden" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -66,7 +71,7 @@
                       <Component id="Isim" min="-2" pref="99" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,7 +114,12 @@
                   <Component id="SVBNumarasi" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Oda_Vaxti" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="VaxtiGorseden" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -196,6 +206,16 @@
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
         <Property name="text" type="java.lang.String" value="SVB Numarasi"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Oda_Vaxti">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Oda Vaxti"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="VaxtiGorseden">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0000/00/00"/>
       </Properties>
     </Component>
   </SubComponents>

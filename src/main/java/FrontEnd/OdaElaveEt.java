@@ -7,6 +7,8 @@ package FrontEnd;
 
 import BackEnd.Oda;
 import BackEnd.OdaDaxiliMelumat;
+import static FrontEnd.hotbed.Odalar;
+import static FrontEnd.hotbed.vaxt;
 
 /**
  *
@@ -15,7 +17,7 @@ import BackEnd.OdaDaxiliMelumat;
 public class OdaElaveEt extends javax.swing.JFrame {
     Oda o;
     javax.swing.JPanel Panel;
-
+    public static int sayac = 0;
     /**
      * Creates new form OdaElaveEt
      */
@@ -141,16 +143,24 @@ public class OdaElaveEt extends javax.swing.JFrame {
         OdaDaxiliMelumat oda = new OdaDaxiliMelumat();
         oda.setNomresi(Integer.parseInt(this.OdaNumarasi.getText()));
         oda.setReng(oda.DurumRengi(String.valueOf(this.jComboBox1.getSelectedItem())));
+        oda.setDurumu(String.valueOf(this.jComboBox1.getSelectedItem()));
         oda.setOdaIcersindekiOdaSayi(Integer.parseInt(this.OdaIcersindeOdaSayi.getText()));
         oda.setIsim(this.Isim.getText());
         oda.setSoyIsim(this.SoyIsim.getText());
-        oda.setSVBNumarasi(Integer.parseInt(this.SVBNumarasi.getText()));
+        int suvnumarasigecirici = Integer.parseInt(this.SVBNumarasi.getText());
+        oda.setSVBNumarasi(suvnumarasigecirici);
+        oda.setVaxt(vaxt.getTarix());
         o = new Oda(oda);
+        
+        if( sayac == 0 ) { Panel.remove(0); }
+        Odalar[sayac] = oda; 
+        sayac++;
         
         Panel.repaint();
         Panel.revalidate();
         Panel.add(o);
         Panel.repaint();
+       
         
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

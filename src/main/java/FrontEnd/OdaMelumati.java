@@ -21,7 +21,7 @@ public class OdaMelumati extends javax.swing.JFrame {
     }
     
     public void MelumatDaxili(int OdaNumarasi, int OdaIicndekiOdaSayi, String Durum, Color Reng, String Isim, String SoysIsim,
-            int SVBNumarasi){
+            int SVBNumarasi, String Vaxt){
         
         this.OdaSayi.setText(String.valueOf(OdaNumarasi));
         this.OdaIcersindekiOdaSayi.setText(String.valueOf(OdaIicndekiOdaSayi));
@@ -30,6 +30,7 @@ public class OdaMelumati extends javax.swing.JFrame {
         this.Isim.setText(Isim);
         this.SoyIsim.setText(SoysIsim);
         this.SVBNumarasi.setText(String.valueOf(SVBNumarasi));
+        this.VaxtiGorseden.setText(Vaxt);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +54,8 @@ public class OdaMelumati extends javax.swing.JFrame {
         SoyIsim = new javax.swing.JLabel();
         SVBNumarasi = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        Oda_Vaxti = new javax.swing.JLabel();
+        VaxtiGorseden = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -97,6 +100,10 @@ public class OdaMelumati extends javax.swing.JFrame {
 
         jLabel9.setText("SVB Numarasi");
 
+        Oda_Vaxti.setText("Oda Vaxti");
+
+        VaxtiGorseden.setText("0000/00/00");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,6 +111,9 @@ public class OdaMelumati extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Oda_Vaxti, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -117,17 +127,18 @@ public class OdaMelumati extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(RengliGosderge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SVBNumarasi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                    .addComponent(SoyIsim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(OdaSayi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(OdaDurumu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                    .addComponent(OdaIcersindekiOdaSayi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addComponent(OdaIcersindekiOdaSayi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SVBNumarasi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                                    .addComponent(SoyIsim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(VaxtiGorseden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -165,7 +176,11 @@ public class OdaMelumati extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SVBNumarasi)
                     .addComponent(jLabel9))
-                .addGap(165, 165, 165))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Oda_Vaxti)
+                    .addComponent(VaxtiGorseden))
+                .addGap(145, 145, 145))
         );
 
         pack();
@@ -211,9 +226,11 @@ public class OdaMelumati extends javax.swing.JFrame {
     private javax.swing.JLabel OdaDurumu;
     private javax.swing.JLabel OdaIcersindekiOdaSayi;
     private javax.swing.JLabel OdaSayi;
+    private javax.swing.JLabel Oda_Vaxti;
     private javax.swing.JPanel RengliGosderge;
     private javax.swing.JLabel SVBNumarasi;
     private javax.swing.JLabel SoyIsim;
+    private javax.swing.JLabel VaxtiGorseden;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
